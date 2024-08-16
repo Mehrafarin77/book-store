@@ -1,0 +1,22 @@
+header nav ul{
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li{
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+h3 a{
+    text-decoration: none;
+    color: blue;
+}
+
+#red{
+    color: red;
+}
+
+#green{
+    color: green;
+}

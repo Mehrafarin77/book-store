@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+<title>
+    {% block title %}
+        Add Author
+    {% endblock title %}
+</title>
+
+{% block content %}
+    <li><a href="{% url 'book_outlet:add_address' %}">Add Address</a></li>
+    <h1>New Author</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">save</button>
+    </form>
+{% endblock content %}

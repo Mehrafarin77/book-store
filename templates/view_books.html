@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+<title>
+    {% block title %}
+        All Books
+    {% endblock title %}
+</title>
+
+{% block content %}
+    <h1>All Books</h1>
+    {% for book in books %}
+        <li><a href="{{ book.get_absolute_url }}">{{ book.title|title }}</a></li>
+    {% endfor %}
+    <div class="infos">
+        <p>Total books are: {{ count }} and average rating is: {{ rating_avg|floatformat:2 }}</p>
+    </div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+<title>
+    {% block title %}
+        {{ book.title }}'s Book
+    {% endblock title %}
+</title>
+
+{% block content %}
+    <h1>Book Detail</h1>
+    <h3>Title: {{ book.title }}</h3>
+    <h4>Rating: {{ book.rating }}</h4>
+    <h4>Author: {{ book.author|title }}</h4>
+    <h4>is best selling?
+        {% if book.is_bestselling %}
+            <span id="green">{{ book.is_bestselling }}</span>
+        {% else %}
+            <span id="red">{{ book.is_bestselling }}</span>
+        {% endif %}
+    </h4>
+    <h4>Published countries:
+        {% for country in book.published_countries.all %}
+            {{ country }}
+        {% endfor %}
+    </h4>
+    <a href="{% url 'book_outlet:delete_book' book.id %}">Delete</a>
+    <a href="{% url 'book_outlet:edit_book' book.id %}">Edit</a>
+
+{% endblock content %}
